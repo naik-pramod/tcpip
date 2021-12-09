@@ -12,3 +12,18 @@ TCP/IP therefore makes the physical address invisible, and instead organizes the
  This ARP table is the link between the IP address and the physical address associated with the network adapter card.
 
  ![tcponrouted](/images/tcponrouted.PNG "tcponrouted")
+
+On a routed network, the TCP/IP software uses the following strategy for sending data on the network:
+
+ 1. If the destination address is on the same network segment as the source computer, the source computer sends the packet directly to the destination. The IP address is resolved to a physical address using ARP, and the data is directed to the destination network adapter.
+
+2. If the destination address is on a different segment from the source computer, the following process begins:
+
+2.1 The datagram is directed to a gateway. 
+ A gateway is a device on the local network segment that is capable of forwarding a datagram to other network segments.
+ The gateway address is usually defined through the TCP/IP configuration. If you set up an Internet account with a static IP address through an Internet service provider, the provider will tell you what address to use for the gateway. 
+ The gateway address is resolved to a physical address using ARP, and the data is sent to the gateway’s network adapter.
+
+2.2 The datagram is routed through the gateway to a higher-level network segment, where the process is repeated. If the destination address is on the new segment, the data is delivered to its destination. If not, the datagram is sent to another gateway.
+
+2.3 The datagram passes through the chain of gateways to the destination segment, where the destination IP address is mapped to a physical address using ARP and the data is directed to the destination network adapter.
