@@ -24,7 +24,8 @@ Network administrators often segment networks using devices such as routers to r
 A router is a special device that can read logical addressing information and direct data across the network to its destination.
 At the simplest level, a router divides a local subnet from the larger network.
 
-![router](/images/router.png)
+![router](/images/router.PNG "router")
+
 
 TCP/IP includes protocols that define how the routers find a path through the network. 
 
